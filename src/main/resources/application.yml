@@ -1,0 +1,19 @@
+management:
+  server:
+    port: 8080
+  endpoints:
+    web:
+      exposure:
+        include: check,alive,prometheus,health,info,liveness,readiness,env,togglz
+
+togglz:
+  enabled: true
+  feature-enums: com.example.doubtogg.features.BookstoreFeatures
+  console:
+    enabled: true
+    use-management-port: false
+    path: /togglz-console
+    secured: false
+  features:
+    BOOK_WISHLIST:
+      enabled: true
